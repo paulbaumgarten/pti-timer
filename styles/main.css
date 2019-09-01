@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 5vw;
+}
+
+td{
+}
+
+#right{
+  text-align: right;
+}
+
+table {
+  width: 100%;
+}
+
+.label{
+  font-size: 7vh;
+}
+
+.labelvertical{
+  font-size: 7vw;
+}
+
+.info{
+  display: block;
+  text-align: right;
+  font-size: 15vh;
+}
+
+.infovertical{
+  display: block;
+  text-align: right;
+  font-size: 15vw;
+}
