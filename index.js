@@ -49,7 +49,7 @@ function display() {
 	var now = getTimeNowObject();
 	var sTimeNow = now.hour + ":" + pad(now.minute) + ":" + pad(now.second);
 	document.getElementById("timer").innerHTML = sCountDownTime;
-	document.getElementById("currenttime").innerHTML = sTimeNow;
+//	document.getElementById("currenttime").innerHTML = sTimeNow;
 	document.getElementById("currentsession").innerHTML = sAlarmTime;
 }
 

@@ -9,7 +9,8 @@ body {
   position: absolute;
   top: 0%;
   width: 100%;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto light", "Calibri light", Arial, sans-serif;
+  font-weight: 100;
   font-size: 5vw;
 }
 
@@ -21,7 +22,6 @@ td{
 }
 
 table {
-  width: 100%;
 }
 
 .label{
@@ -33,13 +33,21 @@ table {
 }
 
 .info{
-  display: block;
   text-align: right;
   font-size: 15vh;
 }
 
 .infovertical{
-  display: block;
   text-align: right;
   font-size: 15vw;
+}
+
+#centerme {
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
