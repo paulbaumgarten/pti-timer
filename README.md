@@ -3,11 +3,11 @@ Parent teacher interviews timer
 
 ## Online version
 
-Access the live demo at [https://paulbaumgarten.github.io/pti-timer/app/web/](https://paulbaumgarten.github.io/pti-timer/app/web/)
+Access the online version at [https://paulbaumgarten.github.io/pti-timer/web/](https://paulbaumgarten.github.io/pti-timer/web/)
 
-## Installable version
+## Downloadable/installable version
 
-Coming soon
+Maybe one day
 
 ## Author
 
