@@ -56,7 +56,7 @@ function display() {
 function interval() {
 	var now = getTimeNowObject();
     if (now.secondsOfDay < stopForTheDay) {
-        if (now.secondsOfDay > currentAlarm) {
+        while (now.secondsOfDay > currentAlarm) {
            prevAlarmKey = currentAlarmKey;
            prevAlarm = alarms[prevAlarmKey];
 		   currentAlarmKey++;
