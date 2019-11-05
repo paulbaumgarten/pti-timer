@@ -1,5 +1,4 @@
-import tkinter
-from tkinter import *
+import tkinter as tk
 from datetime import datetime
 import threading, time, math
 
@@ -8,23 +7,24 @@ import threading, time, math
 ####################################
 
 class Timer():
-    def __init__(self):
-        self.window = Tk()
+    def __init__(self, parent):
+        self.window = parent
         self.window.title("Parent teacher interviews timer by Paul Baumgarten")
         self.window.geometry("300x200")
         self.window.attributes('-alpha', 0.5)
         self.window.configure(background='black')
+        self.window.protocol("WM_DELETE_WINDOW", self.window.quit)
         # Labels
-        self.label1 = Label(self.window, text="Current session")
+        self.label1 = tk.Label(self.window, text="Current session")
         self.label1.config(fg="white", background='black', font=("Courier", 18))
         self.label1.place(x=20, y=10)
-        self.label2 = Label(self.window, text="Time remaining")
+        self.label2 = tk.Label(self.window, text="Time remaining")
         self.label2.config(fg="white", background='black', font=("Courier", 18))
         self.label2.place(x=20, y=110)
-        self.session = Label(self.window, text="00:00:00")
+        self.session = tk.Label(self.window, text="00:00:00")
         self.session.config(fg="white", background='black', font=("Courier", 54))
         self.session.place(x=20, y=30)
-        self.remaining = Label(self.window, text="00:00:00")
+        self.remaining = tk.Label(self.window, text="00:00:00")
         self.remaining.config(fg="white", background='black', font=("Courier", 54))
         self.remaining.place(x=20, y=130)
         # self.session['text'] = 'change the value'
@@ -49,18 +49,14 @@ class Timer():
             self.label2.config(background='black')
             self.session.config(background='black')
             self.remaining.config(background='black')
-        threading.Timer(1, self.tick).start()
-
-    def start(self):
-        # Let's get this party started
-        self.window.mainloop()
-
+        threading.Timer(0.2, self.tick).start()
 
 ####################################
 # Main
 ####################################
 
 if __name__ == "__main__":
-    timer = Timer()
-    ticker = threading.Timer(1, timer.tick).start()
-    timer.start()
+    root = tk.Tk()
+    timer = Timer(root)
+    ticker = threading.Timer(0.2, timer.tick).start()
+    root.mainloop()
