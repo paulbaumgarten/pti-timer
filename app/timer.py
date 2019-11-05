@@ -9,11 +9,12 @@ import threading, time, math
 class Timer():
     def __init__(self, parent):
         self.window = parent
+        self.keep_ticking = True
         self.window.title("Parent teacher interviews timer by Paul Baumgarten")
         self.window.geometry("300x200")
-        self.window.attributes('-alpha', 0.5)
+        self.window.attributes('-alpha', 0.8)
         self.window.configure(background='black')
-        self.window.protocol("WM_DELETE_WINDOW", self.window.quit)
+        self.window.protocol("WM_DELETE_WINDOW", self.close)
         # Labels
         self.label1 = tk.Label(self.window, text="Current session")
         self.label1.config(fg="white", background='black', font=("Courier", 18))
@@ -28,6 +29,10 @@ class Timer():
         self.remaining.config(fg="white", background='black', font=("Courier", 54))
         self.remaining.place(x=20, y=130)
         # self.session['text'] = 'change the value'
+
+    def close(self):
+        self.keep_ticking = False
+        self.window.quit()
     
     def tick(self):
         now = datetime.now().timestamp()
@@ -49,7 +54,8 @@ class Timer():
             self.label2.config(background='black')
             self.session.config(background='black')
             self.remaining.config(background='black')
-        threading.Timer(0.2, self.tick).start()
+        if self.keep_ticking:
+            threading.Timer(0.2, self.tick).start()
 
 ####################################
 # Main
@@ -57,6 +63,7 @@ class Timer():
 
 if __name__ == "__main__":
     root = tk.Tk()
+    root.wm_attributes("-topmost", 1) # this will keep it on top
     timer = Timer(root)
     ticker = threading.Timer(0.2, timer.tick).start()
     root.mainloop()

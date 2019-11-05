@@ -10,7 +10,7 @@
 
 // 5 minute intervals from 08:00 to 21:00
 var alarms = []
-for (var i=(8*60*60); i<=(21*60*60); i=i+300) {
+for (var i=(6*60*60); i<=(22*60*60); i=i+300) {
     alarms.push(i);
 }
 
