@@ -55,7 +55,7 @@ class Timer():
             self.session.config(background='black')
             self.remaining.config(background='black')
         if self.keep_ticking:
-            threading.Timer(0.2, self.tick).start()
+            threading.Timer(1.0, self.tick).start()
 
 ####################################
 # Main
@@ -65,5 +65,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.wm_attributes("-topmost", 1) # this will keep it on top
     timer = Timer(root)
-    ticker = threading.Timer(0.2, timer.tick).start()
+    ticker = threading.Timer(1.0, timer.tick).start()
     root.mainloop()

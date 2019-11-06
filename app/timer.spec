@@ -4,10 +4,10 @@ block_cipher = None
 
 
 a = Analysis(['timer.py'],
-             pathex=['/Users/pbaumgarten/repos/pti-timer/app'],
+             pathex=['C:\\repos\\pti-timer\\app'],
              binaries=[],
              datas=[],
-             hiddenimports=['tkinter'],
+             hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True )
+          console=False )
